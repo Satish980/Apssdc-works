@@ -1,0 +1,42 @@
+{% extends 'nav.html' %}
+
+{% block body %}
+
+<div class="container">
+	
+	<div class="card m-3 bg-dark text-light">
+		<div class="card-header">
+			<h1 class="text-center">Edit User</h1>
+		</div>
+		<div class="card-body">
+			<form method="POST" action="{% url 'edituser' user.id %}">
+				{% csrf_token %}	
+				{{ form.as_p }}		
+
+				<label>First_Name </label>
+				<input type="text" placeholder="Enter your first name" value="{{user.first_name}}" name="first_name"><br>
+
+				<label>Last_Name </label>
+				<input type="text" placeholder="Enter your last name" value="{{user.last_name}}" name="last_name"><br>
+
+				<label>Email </label>
+				<input type="text" placeholder="Enter your email" value="{{user.email}}" name="email"><br>
+
+				<label>User Name</label>
+				<input type="text" placeholder="Enter your user name" value="{{user.username}}" name="username"><br>
+
+
+
+
+		</div>
+		<div class="card-footer">
+			<input type="submit" name="Update" value="Update" class="btn btn-warning btn-lg">
+		</div>
+		</form>	
+	</div>
+
+</div>
+
+
+
+{% endblock %}

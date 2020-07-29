@@ -1,0 +1,26 @@
+{% extends 'nav.html' %}
+{% block body %}<br>
+<h2 align="center">Profile</h2>
+<br>
+<br>
+  <div class="container">
+	<table class="table table-bordered table-hover table-stripped">
+		<thead>
+			<tr class="bg-primary text-white">
+				<th>First_Name</th>
+				<th>Last_Name</th>
+				<th>User_Name</th>
+				<th>Email_id</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{user.first_name}}</td>
+				<td>{{user.last_name}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.email}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock%}
